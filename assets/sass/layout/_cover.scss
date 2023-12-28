@@ -1,0 +1,11 @@
+@use "global" as *;
+.l-cover {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100dvh;
+  @include responsive(md) {
+  }
+  @include responsive(xl) {
+  }
+}

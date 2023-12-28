@@ -1,0 +1,21 @@
+@use "global" as *;
+
+.u-frame{
+  @include responsive(md) {
+    max-width: calc(100% - #{vw-size-pc(200)});
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @include responsive(xl) {
+    max-width: calc(100% - 200px);
+  }
+  @include responsive(xxl) {
+    width: calc(100% - 200px);
+    max-width: 1440px;
+  }
+}
+
+.u-oswald{
+  font-family: 'Oswald', sans-serif;
+}
+

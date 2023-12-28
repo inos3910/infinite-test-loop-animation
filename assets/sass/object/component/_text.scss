@@ -1,0 +1,63 @@
+@use "global" as *;
+
+.c-text {
+  overflow: hidden;
+  display: flex;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  @include responsive(md) {
+  }
+  @include responsive(xl) {
+  }
+}
+
+.c-text__item{
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: vw-size-sp(240);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  padding-inline:0.1em;
+  color: #632bd3;
+  background: linear-gradient(to right,#25bdcf 0,#81cf7a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @include responsive(md) {
+    font-size: vw-size-pc(240);
+  }
+  @include responsive(xl) {
+  }
+
+  &:nth-child(odd) {
+    .c-text:not(.no-tick) &{
+      @include animation(MoveLeft var(--tick-duration, 18s) var(--tick-delay, -9s) infinite linear);
+      @include responsive(md) {
+        @include animation(MoveLeft var(--tick-duration, 24s) var(--tick-delay, -12s) infinite linear);
+      }
+    }
+
+    .c-text--reverse:not(.no-tick) & {
+      @include animation(MoveLeft var(--tick-duration, 18s) var(--tick-delay, -9s) infinite linear reverse);
+      @include responsive(md) {
+        @include animation(MoveLeft var(--tick-duration, 24s) var(--tick-delay, -12s) infinite linear reverse);
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    .c-text:not(.no-tick) &{
+      @include animation(MoveLeft2 var(--tick-duration, 18s) infinite linear);
+      @include responsive(md) {
+        @include animation(MoveLeft2 var(--tick-duration, 24s) infinite linear);
+      }
+    }
+
+    .c-text--reverse:not(.no-tick) & {
+      @include animation(MoveLeft2 var(--tick-duration, 18s) infinite linear reverse);
+      @include responsive(md) {
+        @include animation(MoveLeft2 var(--tick-duration, 24s) infinite linear reverse);
+      }
+    }
+  }
+}

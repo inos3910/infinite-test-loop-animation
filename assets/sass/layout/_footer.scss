@@ -1,0 +1,30 @@
+@use "global" as *;
+
+.l-footer {
+  flex-shrink: 0;
+  padding-block: 30px;
+  background: #f1f1f1;
+  @include responsive(md) {
+    padding-block: 90px;
+  }
+  @include responsive(xl) {
+  }
+
+  &__inner {
+    padding-inline: 15px;
+    @include responsive(md) {
+      padding-inline: 0;
+    }
+    @include responsive(xl) {
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    font-weight: 800;
+    @include responsive(md) {
+    }
+    @include responsive(xl) {
+    }
+  }
+}

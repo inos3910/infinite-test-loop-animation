@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.l-header {
+  flex-shrink: 0;
+  padding-block: 30px;
+  background: #f1f1f1;
+  @include responsive(md) {
+    padding-block: 60px;
+  }
+  @include responsive(xl) {
+  }
+}
+
+.l-header__inner {
+  padding-inline: 15px;
+  @include responsive(md) {
+    text-align: center;
+    padding-inline: 0;
+  }
+  @include responsive(xl) {
+  }
+}
+
+.l-header__title {
+  font-size: vw-size-sp(30);
+  font-weight: 800;
+  line-height: 1.5;
+  @include responsive(md) {
+    font-size: vw-size-pc(24);
+  }
+  @include responsive(xl) {
+    font-size: 24px;
+  }
+}

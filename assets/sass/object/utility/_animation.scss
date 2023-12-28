@@ -1,0 +1,25 @@
+@use "global" as *;
+
+@include keyframes (Spin) {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@include keyframes(MoveLeft) {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@include keyframes(MoveLeft2) {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
