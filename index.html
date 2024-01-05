@@ -1,69 +1,141 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="format-detection"
+      content="telephone=no, email=no, address=no"
+    />
+    <title>【CSS + JS】テキストの無限ループアニメーション</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="format-detection" content="telephone=no, email=no, address=no">
-  <title>【CSS + JS】テキストの無限ループアニメーション</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&amp;display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/dist/code.bundle.js" defer></script>
+  </head>
 
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/dist/code.bundle.js" defer></script>
-</head>
-
-<body>
-  <div class="l-cover">
-    <header class="l-header">
-      <div class="l-header__inner u-frame">
-        <h1 class="l-header__title">テキストの無限ループアニメーションのデモ</h1>
-      </div>
-    </header>
-    <!-- /.l-header -->
-    <main class="l-main">
-      <div class="p-content u-frame">
-        <div class="p-content__inner">
-          <div class="c-text no-tick js-tick">
-            <div class="c-text__item js-tick-item">NOTES BY SHARESL</div>
-          </div>
-          <!-- /.c-text -->
-          <div class="c-text c-text--reverse no-tick js-tick">
-            <div class="c-text__item js-tick-item">INFINITE TEXT LOOP ANIMATION.</div>
-          </div>
-          <!-- /.c-text -->
-          <div class="c-text no-tick js-tick">
-            <div class="c-text__item js-tick-item">SAMPLE TEXT GA MUGEN NI NAGARETERUYO.</div>
-          </div>
-          <!-- /.c-text -->
-          <div class="c-text c-text--reverse no-tick js-tick">
-            <div class="c-text__item js-tick-item">SAMPLE TEXT GA MUGEN NI NAGARETERUYO.</div>
-          </div>
-          <!-- /.c-text -->
+  <body>
+    <div class="l-cover">
+      <header class="l-header">
+        <div class="l-header__inner u-frame">
+          <h1 class="l-header__title">
+            テキストの無限ループアニメーションのデモ
+          </h1>
         </div>
-        <!-- /.p-content__inner -->
-        <div class="p-content__link">
-          <a href="https://notes.sharesl.net/articles/2749/">ブログ記事ページへ戻る</a>
+      </header>
+      <!-- /.l-header -->
+      <main class="l-main">
+        <div class="p-content u-frame">
+          <div class="p-content__inner">
+            <section class="p-content__container" id="demo-1">
+              <h2 class="caption">JS調整なし</h2>
+              <div class="c-text">
+                <div class="c-text__item">NOTES BY SHARESL</div>
+                <div class="c-text__item">NOTES BY SHARESL</div>
+                <div class="c-text__item">NOTES BY SHARESL</div>
+              </div>
+              <!-- /.c-text -->
+            </section>
+            <!-- /.p-content__container -->
+            <section class="p-content__container" id="demo-2">
+              <h2 class="caption">JS調整あり</h2>
+              <div class="c-text no-tick js-tick">
+                <div class="c-text__item js-tick-item">NOTES BY SHARESL</div>
+              </div>
+              <!-- /.c-text -->
+            </section>
+            <!-- /.p-content__container -->
+            <section class="p-content__container" id="demo-3">
+              <h2 class="caption">
+                複数の異なる長さの文章を交互にアニメーション（JS調整なし）
+              </h2>
+              <div class="c-text">
+                <div class="c-text__item">NOTES BY SHARESL</div>
+                <div class="c-text__item">NOTES BY SHARESL</div>
+                <div class="c-text__item">NOTES BY SHARESL</div>
+              </div>
+              <!-- /.c-text -->
+              <div class="c-text c-text--reverse">
+                <div class="c-text__item">INFINITE TEXT LOOP ANIMATION.</div>
+                <div class="c-text__item">INFINITE TEXT LOOP ANIMATION.</div>
+                <div class="c-text__item">INFINITE TEXT LOOP ANIMATION.</div>
+              </div>
+              <!-- /.c-text -->
+              <div class="c-text">
+                <div class="c-text__item">
+                  SAMPLE TEXT GA MUGEN NI NAGARETERUYO.
+                </div>
+                <div class="c-text__item">
+                  SAMPLE TEXT GA MUGEN NI NAGARETERUYO.
+                </div>
+                <div class="c-text__item">
+                  SAMPLE TEXT GA MUGEN NI NAGARETERUYO.
+                </div>
+              </div>
+              <!-- /.c-text -->
+              <div class="c-text c-text--reverse">
+                <div class="c-text__item">ZUTTO NAGAREMASU.</div>
+                <div class="c-text__item">ZUTTO NAGAREMASU.</div>
+                <div class="c-text__item">ZUTTO NAGAREMASU.</div>
+              </div>
+              <!-- /.c-text -->
+            </section>
+            <!-- /.p-content__container -->
+            <section class="p-content__container" id="demo-4">
+              <h2 class="caption">
+                複数の異なる長さの文章を交互にアニメーション（JS調整あり）
+              </h2>
+              <div class="c-text no-tick js-tick">
+                <div class="c-text__item js-tick-item">NOTES BY SHARESL</div>
+              </div>
+              <!-- /.c-text -->
+              <div class="c-text c-text--reverse no-tick js-tick">
+                <div class="c-text__item js-tick-item">
+                  INFINITE TEXT LOOP ANIMATION.
+                </div>
+              </div>
+              <!-- /.c-text -->
+              <div class="c-text no-tick js-tick">
+                <div class="c-text__item js-tick-item">
+                  SAMPLE TEXT GA MUGEN NI NAGARETERUYO.
+                </div>
+              </div>
+              <!-- /.c-text -->
+              <div class="c-text c-text--reverse no-tick js-tick">
+                <div class="c-text__item js-tick-item">ZUTTO NAGAREMASU.</div>
+              </div>
+              <!-- /.c-text -->
+            </section>
+            <!-- /.p-content__container -->
+          </div>
+          <!-- /.p-content__inner -->
+          <div class="p-content__link">
+            <a href="https://notes.sharesl.net/articles/2749/"
+              >ブログ記事ページへ戻る</a
+            >
+          </div>
+          <!-- /.p-content__link -->
         </div>
-        <!-- /.p-content__link -->
-      </div>
-      <!-- /.p-content -->
-    </main>
-    <!-- /.l-main -->
-    <footer class="l-footer">
-      <div class="l-footer__inner u-frame">
-        <p class="l-footer__copyright">
-          <small>©︎ 2023 SHARESL</small>
-        </p>
-      </div>
-      <!-- /.l-footer__inner -->
-    </footer>
-    <!-- /.l-footer -->
-  </div>
-  <!-- /.l-cover -->
-</body>
-
+        <!-- /.p-content -->
+      </main>
+      <!-- /.l-main -->
+      <footer class="l-footer">
+        <div class="l-footer__inner u-frame">
+          <p class="l-footer__copyright">
+            <small>©︎ 2023 SHARESL</small>
+          </p>
+        </div>
+        <!-- /.l-footer__inner -->
+      </footer>
+      <!-- /.l-footer -->
+    </div>
+    <!-- /.l-cover -->
+  </body>
 </html>

@@ -1,8 +1,6 @@
 export default class Main {
   constructor() {
-    document.addEventListener('DOMContentLoaded', () => {
-      this.init();
-    });
+    this.init();
   }
 
   init() {
@@ -11,6 +9,7 @@ export default class Main {
     this.resizeRefresh();
   }
 
+  //リサイズ時にアニメーションの速度を再計算
   resizeRefresh() {
     const target = document.body;
     const resizeObserver = new ResizeObserver((entries) => {
@@ -70,8 +69,6 @@ export default class Main {
       tickElems.forEach((el) => {
         length += el.clientWidth;
         el.insertAdjacentHTML('afterend', el.outerHTML);
-        el.insertAdjacentHTML('afterend', el.outerHTML);
-
         if (length > window.innerWidth) {
           return;
         }
