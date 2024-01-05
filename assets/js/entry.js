@@ -28,7 +28,7 @@ export default class Main {
     }
 
     const distance = window.innerWidth;
-    const time = Math.floor(15 * (distance / 1000));
+    const time = 18;
     const speed = distance / time;
 
     targets.forEach((target) => {
