@@ -28,7 +28,8 @@ export default class Main {
     }
 
     const distance = window.innerWidth;
-    const time = 18;
+    const mql = window.matchMedia('(min-width: 801px)');
+    const time = mql.matches ? 18 : 9;
     const speed = distance / time;
 
     targets.forEach((target) => {
